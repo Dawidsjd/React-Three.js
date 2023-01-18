@@ -19,6 +19,8 @@ import { Car } from "./Car";
 import { Ground } from "./Ground";
 import { Rings } from "./Rings";
 import { FloatingGrid } from "./FloatingGrid";
+import { useState, useEffect } from "react";
+
 
 function CarShow(){
   return (
@@ -86,12 +88,18 @@ function CarShow(){
 }
 
 function App(){
+
   return (
-    <Suspense fallback={null}>
-      <Canvas shadows>
-        <CarShow />
-      </Canvas>
-    </Suspense>
+    <>
+      
+      <Suspense fallback={null}>
+        <Canvas shadows>
+          <CarShow />
+        </Canvas>
+      </Suspense>
+      
+      
+    </>
   );
 }
 
