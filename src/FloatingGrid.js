@@ -14,8 +14,8 @@ export function FloatingGrid() {
   }, [diffuse]);
 
   useFrame((state, delta) => {
-    let t = -state.clock.getElapsedTime() * 0.68;
-    diffuse.offset.set(0, t);
+    //let t = -state.clock.getElapsedTime() * 0.68;
+    //diffuse.offset.set(0, t);
   });
 
   return <>
