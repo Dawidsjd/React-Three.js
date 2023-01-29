@@ -8,11 +8,11 @@ import { Mesh } from "three";
 export function Car() {
   const gltf = useLoader(
     GLTFLoader,
-    process.env.PUBLIC_URL + "models/car2/scene.gltf"
+    process.env.PUBLIC_URL + "models/terarria/source/model.gltf"
   );
   
   useEffect(() => {
-    gltf.scene.scale.set(1, 1, 1);
+    gltf.scene.scale.set(0.4, 0.4, 0.4);
     gltf.scene.position.set(0, 0, 0);
     gltf.scene.traverse((object) => {
       if (object instanceof Mesh) {

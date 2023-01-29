@@ -6,7 +6,7 @@ import { useFrame, useLoader } from "@react-three/fiber";
 
 export function ModelAnimated() {
   let mixer = null;
-  const { scene, animations } = useLoader(GLTFLoader, "/atek.glb");
+  const { scene, animations } = useLoader(GLTFLoader, "/moon.glb");
   //console.log(scene.animations);
     
     scene.traverse(function(node){
@@ -41,5 +41,5 @@ export function ModelAnimated() {
     //    }
     //}
   });
-  return <primitive object={scene} position={[0, 0, 3]} scale={1} />;
+  return <primitive object={scene} position={[0, 0, 0]} scale={15} />;
 }

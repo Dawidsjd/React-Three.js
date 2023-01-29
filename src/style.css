@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 html, body, #root, canvas {
     width: 100%;
     height: 100%;
@@ -26,3 +33,67 @@ html, body, #root, canvas {
       transform: rotate(360deg);
     }
   }
+
+  .gh_icon{
+    position: absolute;
+    top: 5%;
+    right: 2%;
+  }
+
+  .Avatar_container{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+  .main_container{
+    position: absolute;
+    top: 50%;
+    left: 18%;
+    transform: translate(-50%,-50%);
+    
+  }
+
+  .title{
+    color: #ffffff;
+    letter-spacing: 10px;
+    text-shadow: 2px 5px 9px rgba(66, 68, 90, 1);
+    font-size: 5em;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+  }
+
+  .title span{
+    color: rgb(0, 203, 253);
+  }
+
+  .main_container .title::before{
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -5%;
+    width: 5px;
+    height: 80%;
+    background: rgb(0, 203, 253);
+    border-radius: 10px;
+  }
+
+  .main_container .profile_icon{
+    box-shadow: 2px 5px 9px rgba(66, 68, 90, 1);
+  }
+
+  .business_section{
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .socials{
+    cursor: pointer;
+    color: #ffffff;
+  }
+  

@@ -21,13 +21,16 @@ import { Rings } from "./Rings";
 import { FloatingGrid } from "./FloatingGrid";
 import { useState, useEffect } from "react";
 import { ModelAnimated } from "./ModelAnimated";
+import { Background } from "./Background";
+import { FirstSide } from "./FirstSide";
+
 
 function CarShow(){
   return (
     <>
-      <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
-    
-      <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
+      <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} maxDistance={100}/>
+      
+      <PerspectiveCamera makeDefault fov={50} position={[-100, 22, 100]} />
 
       <color args={[0, 0, 0]} attach="background" />
 
@@ -36,15 +39,15 @@ function CarShow(){
         {(texture) => (
           <>
             <Environment map={texture} />
-            <Car />
+            {/* <Car /> */}
             <ModelAnimated />
           </>
         )}
       </CubeCamera>
       
-      <Rings />
+      {/* <Rings />
       <Boxes />
-      <FloatingGrid />
+      <FloatingGrid /> */}
 
       <spotLight 
         color={[1, 0.25, 0.7]}
@@ -66,10 +69,10 @@ function CarShow(){
         shadow-bias={-0.0001}
       />
       
-      <Ground />
+      {/* <Ground /> */}
 
       <EffectComposer>
-        <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={3} height={480} />
+        {/* <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={3} height={480} /> */}
         <Bloom
           blendFunction={BlendFunction.ADD}
           intensity={1.3} // The bloom intensity.
@@ -95,8 +98,10 @@ function App(){
       
       <Suspense fallback={null}>
         <Canvas shadows>
+          <Background />
           <CarShow />
         </Canvas>
+        <FirstSide/>
       </Suspense>
       
       
